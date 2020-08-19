@@ -1,0 +1,46 @@
+<!--
+ Copyright (c) 2014, 2019, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+ -->
+<style>
+  .icon-list li {
+    list-style: none;
+    float: left;
+    padding: 10px;
+  }
+  .icon-list a {
+    text-decoration: none;
+    color: black;
+  }
+  .oj-flex-item span {
+    font-size: 34px;
+  }
+</style>
+<div class="oj-hybrid-padding">
+  <h1>Ícones Oracle JET</h1>
+
+  <p>
+    <label for="filter">Filtro:</label><br />
+    <oj-input-text id="filter" value="{{filter}}"></oj-input-text>
+    <button>Filtrar</button>
+  </p>
+
+  <ul class="icon-list">
+    <oj-bind-for-each data="[[dataProvider]]">
+      <template data-oj-as="item">
+        <li>
+          <a href="#" :title="[[item.data]]">
+            <div class="oj-flex-item oj-sm-padding-2x-horizontal">
+              <span
+                class="oj-ux-icon-size-48x"
+                :class="[[item.data]]"
+                role="img"
+                aria-label="heart"
+              ></span>
+            </div>
+          </a>
+        </li>
+      </template>
+    </oj-bind-for-each>
+  </ul>
+</div>
